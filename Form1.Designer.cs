@@ -44,6 +44,8 @@
             this.display = new System.Windows.Forms.TextBox();
             this.button10 = new System.Windows.Forms.Button();
             this.buttonEqual = new System.Windows.Forms.Button();
+            this.closeBTN = new System.Windows.Forms.Button();
+            this.formSelect = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button1
@@ -185,7 +187,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(57, 137);
+            this.button10.Location = new System.Drawing.Point(106, 137);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(75, 23);
             this.button10.TabIndex = 14;
@@ -196,7 +198,7 @@
             // buttonEqual
             // 
             this.buttonEqual.ForeColor = System.Drawing.Color.Black;
-            this.buttonEqual.Location = new System.Drawing.Point(156, 137);
+            this.buttonEqual.Location = new System.Drawing.Point(195, 137);
             this.buttonEqual.Name = "buttonEqual";
             this.buttonEqual.Size = new System.Drawing.Size(75, 23);
             this.buttonEqual.TabIndex = 15;
@@ -204,11 +206,36 @@
             this.buttonEqual.UseVisualStyleBackColor = true;
             this.buttonEqual.Click += new System.EventHandler(this.buttonEqual_Click);
             // 
+            // closeBTN
+            // 
+            this.closeBTN.Location = new System.Drawing.Point(276, 137);
+            this.closeBTN.Name = "closeBTN";
+            this.closeBTN.Size = new System.Drawing.Size(106, 23);
+            this.closeBTN.TabIndex = 16;
+            this.closeBTN.Text = "CLOSE";
+            this.closeBTN.UseVisualStyleBackColor = true;
+            this.closeBTN.Click += new System.EventHandler(this.closeBTN_Click);
+            // 
+            // formSelect
+            // 
+            this.formSelect.FormattingEnabled = true;
+            this.formSelect.Items.AddRange(new object[] {
+            "Восьмигранник",
+            "Эллипс",
+            "Трапеция"});
+            this.formSelect.Location = new System.Drawing.Point(12, 139);
+            this.formSelect.Name = "formSelect";
+            this.formSelect.Size = new System.Drawing.Size(75, 21);
+            this.formSelect.TabIndex = 17;
+            this.formSelect.SelectedIndexChanged += new System.EventHandler(this.selectForm);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.formSelect);
+            this.Controls.Add(this.closeBTN);
             this.Controls.Add(this.buttonEqual);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.display);
@@ -250,6 +277,8 @@
         private System.Windows.Forms.TextBox display;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button buttonEqual;
+        private System.Windows.Forms.Button closeBTN;
+        private System.Windows.Forms.ComboBox formSelect;
     }
 }
 
