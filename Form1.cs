@@ -19,6 +19,7 @@ namespace Calulator
         public string number1;
         public bool flagNumber2Start;
         public double result;
+        List <Button> buttons = new List<Button>();
 
         public EventHandler ShapeComboBox_SelectedIndexChanged { get; }
 
@@ -29,7 +30,22 @@ namespace Calulator
             int screenHeight = Screen.PrimaryScreen.Bounds.Height;
             this.Width = screenWidth / 4;
             this.Height = screenHeight / 5;
+            addButtonsToList();
             flagNumber2Start = false;
+        }
+
+        private void addButtonsToList()
+        {
+            buttons.Add(button1);
+            buttons.Add(button2);
+            buttons.Add(button3);
+            buttons.Add(button4);
+            buttons.Add(button5);
+            buttons.Add(button6);
+            buttons.Add(button7);
+            buttons.Add(button8);
+            buttons.Add(button9);
+            buttons.Add(button10);
         }
 
 
@@ -51,7 +67,7 @@ namespace Calulator
                 display.Text = String.Empty;
             }
             Button button = (Button)sender;
-            display.Text = display.Text + button.Text;
+            display.Text += button.Text;
 
         }
 
@@ -113,16 +129,11 @@ namespace Calulator
                     this.Region = new Region(path8Grannik);
                     this.BackColor = Color.Red;
                     path8Grannik.AddPolygon(pointsButtons);
-                    button1.Region = new Region(path8Grannik);
-                    button2.Region = new Region(path8Grannik);
-                    button3.Region = new Region(path8Grannik);
-                    button4.Region = new Region(path8Grannik);
-                    button5.Region = new Region(path8Grannik);
-                    button6.Region = new Region(path8Grannik);
-                    button7.Region = new Region(path8Grannik);
-                    button8.Region = new Region(path8Grannik);
-                    button9.Region = new Region(path8Grannik);
-                    button10.Region = new Region(path8Grannik);
+                    foreach (var item in buttons)
+                    {
+                        item.Region = new Region(path8Grannik);
+                    }
+                   
 
                     break;
                 case "Эллипс":
@@ -131,16 +142,10 @@ namespace Calulator
                     this.Region = new Region(pathEllips);
                     this.BackColor = Color.Green;
                     pathEllips.AddEllipse(0, 0, button1.Width, button1.Height);
-                    button1.Region = new Region(pathEllips);
-                    button2.Region = new Region(pathEllips);
-                    button3.Region = new Region(pathEllips);
-                    button4.Region = new Region(pathEllips);
-                    button5.Region = new Region(pathEllips);
-                    button6.Region = new Region(pathEllips);
-                    button7.Region = new Region(pathEllips);
-                    button8.Region = new Region(pathEllips);
-                    button9.Region = new Region(pathEllips);
-                    button10.Region = new Region(pathEllips);
+                    foreach (var item in buttons)
+                    {
+                        item.Region = new Region(pathEllips);
+                    }
 
                     break;
                 case "Трапеция":
@@ -163,16 +168,10 @@ namespace Calulator
                     this.Region = new Region(pathTrapezia);
                     this.BackColor= Color.Yellow;
                     pathTrapezia.AddPolygon(pointsButton2);
-                    button1.Region = new Region(pathTrapezia);
-                    button2.Region = new Region(pathTrapezia);
-                    button3.Region = new Region(pathTrapezia);
-                    button4.Region = new Region(pathTrapezia);
-                    button5.Region = new Region(pathTrapezia);
-                    button6.Region = new Region(pathTrapezia);
-                    button7.Region = new Region(pathTrapezia);
-                    button8.Region = new Region(pathTrapezia);
-                    button9.Region = new Region(pathTrapezia);
-                    button10.Region = new Region(pathTrapezia);
+                    foreach (var item in buttons)
+                    {
+                        item.Region = new Region(pathTrapezia);
+                    }
 
 
                     break;
